@@ -17,6 +17,7 @@ class LoginScreen extends StatelessWidget {
 
 class _LoginView extends StatelessWidget {
   final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   _LoginView();
 
   @override
@@ -30,6 +31,22 @@ class _LoginView extends StatelessWidget {
             controller: _usernameController,
             decoration: const InputDecoration(
               hintText: 'Username',
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(8),
+                ),
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 16),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TextField(
+            controller: _passwordController,
+            obscureText: true, // This hides the entered text
+            decoration: const InputDecoration(
+              hintText: 'Password',
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.all(
                   Radius.circular(8),
