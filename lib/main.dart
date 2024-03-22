@@ -5,21 +5,22 @@ void main() {
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({Key? key}) : super(key: key);
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const CounterScreen(),
+      home: CounterScreen(),
     );
   }
 }
 
 class CounterScreen extends StatefulWidget {
-  const CounterScreen({Key? key}) : super(key: key);
+  const CounterScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CounterScreenState createState() => _CounterScreenState();
 }
 
@@ -69,7 +70,7 @@ class _CounterScreenState extends State<CounterScreen> {
                 color: _getTextColor(_counter),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -77,7 +78,7 @@ class _CounterScreenState extends State<CounterScreen> {
                   onPressed: _increment,
                   child: const Icon(Icons.add),
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 ElevatedButton(
                   onPressed: _decrement,
                   child: const Icon(Icons.remove),
