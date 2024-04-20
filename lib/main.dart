@@ -9,10 +9,17 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(), // Set the theme to dark mode
+      home: const Scaffold(
         body: Center(
-          child: Text('Hello World!'),
+          child: Text(
+            'Hello World!',
+            style: TextStyle(
+              fontSize: 24,
+            ),
+          ),
         ),
       ),
     );
