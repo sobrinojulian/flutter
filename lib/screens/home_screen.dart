@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({
-    super.key,
-  });
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int number = 0;
+
+  void onPressed() {
+    setState(() {
+      number++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,27 +29,26 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Hello World!',
+              'Welcome',
               style: TextStyle(
                 fontSize: 24,
               ),
             ),
             const SizedBox(height: 20),
-            const Text(
-              '2',
-              style: TextStyle(
+            Text(
+              '$number',
+              style: const TextStyle(
                 fontSize: 24,
-              )
+              ),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(onPressed: onPressed, child: const Text('Increment')),
+            ElevatedButton(
+              onPressed: onPressed,
+              child: const Text('Increment'),
+            ),
           ],
         ),
       ),
     );
-  }
-
-  void onPressed() {
-
   }
 }
